@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_margin_top">75dp</dimen>
+    <dimen name="layout_marginBottom">16dp</dimen>
+    <dimen name="layout_marginEnd">16dp</dimen>
+    <dimen name="layout_marginStart">16dp</dimen>
+    <dimen name="fila_icon_width">50dp</dimen>
+</resources>
