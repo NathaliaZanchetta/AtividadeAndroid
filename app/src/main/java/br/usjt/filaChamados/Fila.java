@@ -10,12 +10,18 @@ public class Fila implements Serializable{
     private String descricao;
     private List<Chamado> chamados;
     private String status;
+    private int idFila;
 
-    public Fila(String nome, int iconId, String descricao, String status) {
+    public Fila(String nome, int iconId, String descricao, String status, int idFila) {
         this.nome = nome;
         this.iconId = iconId;
         this.descricao = descricao;
         this.status = status;
+        this.idFila = idFila;
+    }
+
+    public Fila(int i, String servidores, int ic_poll_black_24dp) {
+
     }
 
     public String getDescricao() {
@@ -55,4 +61,12 @@ public class Fila implements Serializable{
     }
 
 
+    public int getidFila() {
+        int idFila = 0;
+        return idFila;
+    }
+
+    public void setId(int idFila) {
+        this.idFila = idFila;
+    }
 }

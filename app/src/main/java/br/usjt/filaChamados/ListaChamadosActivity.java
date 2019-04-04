@@ -16,6 +16,7 @@ public class ListaChamadosActivity extends AppCompatActivity {
 
     private RecyclerView chamadosRecyclerView;
     private static Activity instancia;
+    private ChamadoDAO chamadoDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,15 @@ public class ListaChamadosActivity extends AppCompatActivity {
         chamadosRecyclerView.setAdapter(adapter);
         Intent origemIntent =
                 getIntent();
+
         String nomeFila = origemIntent.getStringExtra("nome_fila");
-        final List<Chamado> chamados = busca(nomeFila);
+        final List<Chamado> chamado = busca(nomeFila);
+
+        chamadoDAO = new ChamadoDAO(this);
+        final List <Chamado> chamados = chamadoDAO.busca(nomeFila);
+
         adapter = new ChamadoArrayAdapter(this, chamados);
+
         chamadosRecyclerView.setAdapter(adapter);
         chamadosRecyclerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
